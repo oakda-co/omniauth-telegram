@@ -81,7 +81,7 @@ module OmniAuth
       end
 
       def check_fields
-        FIELDS.all? { |f| request.params.include?(f) }
+        request.params.keys.all? { |f| FIELDS.include?(f) }
       end
 
       def check_signature
